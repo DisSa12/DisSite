@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DisSite</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* Reset CSS */
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		/* Header */
+		.header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.header h1 {
+			font-size: 3em;
+			margin: 0;
+			padding: 0;
+			text-shadow: 2px 2px #000;
+		}
+
+		/* Menu */
+		nav {
+			background-color: #ccc;
+			padding: 10px;
+			border-radius: 5px;
+			overflow: hidden;
+			margin-bottom: 20px;
+			box-shadow: 0px 0px 5px #ccc;
+		}
+
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		nav li {
+			float: left;
+		}
+
+		nav li a {
+			display: block;
+			color: #333;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			transition: background-color 0.3s ease;
+		}
+
+		nav li a:hover {
+			background-color: #ddd;
+		}
+
+		/* Main content */
+		.main {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 20px;
+		}
+
+		.card {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #ccc;
+			transition: box-shadow 0.3s ease;
+		}
+
+		.card:hover {
+			box-shadow: 0px 0px 10px #ccc;
+		}
+
+		.card h2 {
+			font-size: 2em;
+			margin: 0;
+			margin-bottom: 10px;
+			padding: 0;
+		}
+
+		.card p {
+			margin: 0;
+			margin-bottom: 10px;
+			padding: 0;
+		}
+
+		.card img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 10px;
+		}
+
+		/* Footer */
+		.footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.footer p {
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Responsive */
+		@media screen and (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+
+			.header h1 {
+				font-size: 2em;
+			}
+
+			nav {
+				margin-bottom: 10px;
+			}
+
+			nav li a {
+				padding: 10px;
+			}
+
+			.main {
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				grid-gap: 10px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1>DisSite</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#amici">Amici</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<main class="main">
+			<section id="home">
+				<img src="https://www.example.com/image.jpg" alt="Immagine di esempio">
+			</section>
+
+			<section id="amici" style="display: none;">
+				<img src="https://www.example.com/image1.jpg">
+				<img src="https://www.example.com/image2.jpg">
+				<img src="https://www.example.com/image3.jpg">
+				<img src="https://www.example.com/image4.jpg">
+				<img src="https://www.example.com/image5.jpg">
+				<img src="https://www.example.com/image6.jpg">
+				<img src="https://www.example.com/image7.jpg">
+				<img src="https://www.example.com/image8.jpg">
+				<img src="https://www.example.com/image9.jpg">
+				<img src="https://www.example.com/image10.jpg">
+			</section>
+		</main>
+	</div>
+
+	<footer class="footer">
+		<p>&copy; 2023 DisSite. Tutti i diritti riservati.</p>
+	</footer>
+</body>
+<script>
+	var linkAmici = document.querySelector('nav a[href="#amici"]');
+	var linkHome = document.querySelector('nav a[href="#home"]');
+	var sezioneAmici = document.getElementById('amici');
+	var sezioneHome = document.getElementById('home');
+
+	linkAmici.addEventListener('click', function(event) {
+		event.preventDefault();
+		sezioneHome.style.display = 'none';
+		sezioneAmici.style.display = 'grid';
+	});
+
+	linkHome.addEventListener('click', function(event) {
+		event.preventDefault();
+		sezioneHome.style.display = 'block';
+		sezioneAmici.style.display = 'none';
+	});
+</script>
+</html>
