@@ -110,6 +110,24 @@
 			max-width: 100%;
 			height: auto;
 			margin-bottom: 10px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		#home {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 500px;
+			background-color: #f2f2f2;
+		}
+
+		#home h1 {
+			font-size: 5em;
+			font-family: 'Montserrat', sans-serif;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+			color: #333;
 		}
 
 		/* Footer */
@@ -166,20 +184,16 @@
 	<div class="container">
 		<main class="main">
 			<section id="home">
-				<img src="https://www.example.com/image.jpg" alt="Immagine di esempio">
+				<h1>DIS</h1>
 			</section>
 
 			<section id="amici" style="display: none;">
-				<img src="https://github.com/DisSa12/DisSite/blob/main/cippi.jpg">
-				<img src="https://github.com/DisSa12/DisSite/blob/main/dis.jpg">
-				<img src="https://github.com/DisSa12/DisSite/blob/main/gioggia.jpg">
-				<img src="https://github.com/DisSa12/DisSite/blob/main/luca.JPEG">
-				<img src="https://github.com/DisSa12/DisSite/blob/main/simo.jpeg">
-				<img src="https://www.example.com/image6.jpg">
-				<img src="https://www.example.com/image7.jpg">
-				<img src="https://www.example.com/image8.jpg">
-				<img src="https://www.example.com/image9.jpg">
-				<img src="https://www.example.com/image10.jpg">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/cippi.jpg">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/dis.jpg">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/gioggia.jpg">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/luca.JPEG">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/simo.jpeg">
+				<img src="https://github.com/DisSa12/DisSite/blob/main/Photo/sofi.jpg">
 			</section>
 		</main>
 	</div>
@@ -202,7 +216,7 @@
 
 	linkHome.addEventListener('click', function(event) {
 		event.preventDefault();
-		sezioneHome.style.display = 'block';
+		sezioneHome.style.display = 'flex';
 		sezioneAmici.style.display = 'none';
 	});
 </script>
