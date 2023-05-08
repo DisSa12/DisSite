@@ -3,235 +3,201 @@
     <head> 
         <title>DisSite</title> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <style> /* Reset CSS */ * {
-             box-sizing: border-box; margin: 0; padding: 0; 
+        <style>
+            /* Reset CSS */ 
+            * {
+                box-sizing: border-box; 
+                margin: 0; 
+                padding: 0; 
             }
+            
             body {
-		background-color: #f2f2f2;
-		font-family: Arial, sans-serif;
-		font-size: 16px;
-		line-height: 1.5;
-		color: #333;
-	}
+                background-color: #f2f2f2;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #333;
+            }
 
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 20px;
-	}
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
 
-	/* Header */
-	.header {
-		background-color: #333;
-		color: #fff;
-		padding: 20px;
-		text-align: center;
-	}
+            /* Header */
+            .header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
 
-	.header h1 {
-		font-size: 3em;
-		margin: 0;
-		padding: 0;
-		text-shadow: 2px 2px #000;
-	}
+            .header h1 {
+                font-size: 3em;
+                margin: 0;
+                padding: 0;
+                text-shadow: 2px 2px #000;
+            }
 
-	/* Menu */
-	nav {
-		background-color: #ccc;
-		padding: 10px;
-		border-radius: 5px;
-		overflow: hidden;
-		margin-bottom: 20px;
-		box-shadow: 0px 0px 5px #ccc;
-	}
+            /* Menu */
+            nav {
+                background-color: #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
 
-	nav ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-	}
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
 
-	nav li {
-		float: left;
-	}
+            nav li {
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-	nav li a {
-		display: block;
-		color: #333;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-		transition: background-color 0.3s ease;
-	}
+            nav a {
+                display: block;
+                padding: 10px;
+                background-color: #fff;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+            }
 
-	nav li a:hover {
-		background-color: #ddd;
-	}
+            nav a:hover {
+                background-color: #333;
+                color: #fff;
+            }
 
-	/* Main content */
-	.main {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		grid-gap: 20px;
-	}
+            /* Main */
+            main {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-	.card {
-		background-color: #fff;
-		padding: 20px;
-		border-radius: 5px;
-		box-shadow: 0px 0px 5px #ccc;
-		transition: box-shadow 0.3s ease;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-	}
+            .page {
+                display: none;
+            }
 
-	.card:hover {
-		box-shadow: 0px 0px 10px #ccc;
-	}
+            .page.active {
+                display: block;
+            }
 
-	.card h2 {
-		font-size: 2em;
-		margin: 0;
-		margin-bottom: 10px;
-		padding: 0;
-	}
+            .page h2 {
+                margin-bottom: 10px;
+            }
 
-	.card p {
-		margin: 0;
-		margin-bottom: 10px;
-		padding: 0;
-	}
+            .page ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
 
-	.card img {
-		max-width: 100%;
-		max-height: 250px;
-		object-fit: cover;
-		margin-bottom: 10px;
-	}
+            .page li {
+                display: inline-block;
+                margin-right: 20px;
+            }
 
-	#home {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 500px;
-		background-color: #f2f2f2;
-	}
+            .page img {
+                display: block;
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
 
-	#home h1 {
-		font-size: 5em;
-		font-family: 'Montserrat', sans-serif;
-		text-align: center;
-		text-shadow: 2px 2px #000;
-		color: #333;
-	}
+            /* Footer */
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+            }
 
-	/* Footer */
-	.footer {
-		background-color: #333;
-		color: #fff;
-		padding: 20px;
-		text-align: center;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
+            .footer p {
+                font-size: 0.8em;
+                color: #999;
+                padding: 20px;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            h2 {
+                font-family: 'Tahoma', sans-serif;
+                background-image: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: rainbow 10s linear infinite;
+            }
 
-	.footer p {
-		margin: 0;
-		padding: 0;
-	}
+            @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+            }
+        </style>
+    </head> 
+    <body> 
+        <div class="container"> 
+            <header class="header"> 
+                <h1>DisSite</h1> 
+            </header> 
+            <nav> 
+                <ul> 
+                    <li><a href="#" class="menu-link active" data-page="home">Benvenuti</a></li> 
+                    <li><a href="#" class="menu-link" data-page="friends">Amici</a></li> 
+                </ul> 
+            </nav> 
+            <main> 
+                <section class="page active" id="home"> 
+                    <h2>Benvenuti!</h2> 
+                </section> 
+                <section class="page" id="friends"> 
+                    <ul> 
+                        <li><img src="Photo/cippi.jpg" ></li> 
+                        <li><img src="Photo/dis.jpg" ></li> 
+                        <li><img src="Photo/gioggia.jpg" ></li> 
+                        <li><img src="Photo/luca.JPEG" ></li> 
+                        <li><img src="Photo/simo.jpeg" ></li> 
+                        <li><img src="Photo/sofi.jpg" ></li>  
+                    </ul> 
+                </section> 
+            </main> 
+            <footer class="footer"> 
+                <p>&copy; 2023 DisSite</p> 
+            </footer> 
+        </div> 
 
-	/* Responsive */
-	@media screen and (max-width: 768px) {
-		.container {
-			padding: 10px;
-		}
+        <script>
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const pages = document.querySelectorAll('.page');
 
-		.header h1 {
-			font-size: 2em;
-		}
+            menuLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
 
-		nav {
-			margin-bottom: 10px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
+                    const pageId = link.getAttribute('data-page');
+                    const currentPage = document.querySelector('.page.active');
 
-		nav li a {
-			padding: 10px;
-			margin-bottom: 10px;
-		}
+                    currentPage.classList.remove('active');
+                    document.getElementById(pageId).classList.add('active');
 
-		.main {
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			grid-gap: 10px;
-		}
-	}
-</style>
-</head> 
-<body> 
-    <header class="header"> 
-        <h1>DisSite</h1> 
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#amici">Amici</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <main class="main">
-            <section id="home">
-                <h1>DIS</h1>
-            </section>
-    
-            <section id="amici" style="display: none;">
-                <div class="card">
-                    <img src="Photo/cippi.jpg">
-                </div>
-                <div class="card">
-                    <img src="Photo/dis.jpg">
-                </div>
-                <div class="card">
-                    <img src="Photo/gioggia.jpg">
-                </div>
-                <div class="card">
-                    <img src="Photo/luca.JPEG">
-                </div>
-                <div class="card">
-                    <img src="Photo/simo.jpeg">
-                </div>
-                <div class="card">
-                    <img src="Photo/sofi.jpg">
-                </div>
-            </section>
-        </main>
-    </div>
-    
-    <footer class="footer">
-        <p>&copy; 2023 DisSite. Tutti i diritti riservati.</p>
-    </footer>
-<script>
-	var linkAmici = document.querySelector('nav a[href="#amici"]');
-	var linkHome = document.querySelector('nav a[href="#home"]');
-	var sezioneAmici = document.getElementById('amici');
-	var sezioneHome = document.getElementById('home');
+                    menuLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
 
-	linkAmici.addEventListener('click', function(event) {
-		event.preventDefault();
-		sezioneHome.style.display = 'none';
-		sezioneAmici.style.display = 'grid';
-	});
-
-	linkHome.addEventListener('click', function(event) {
-		event.preventDefault();
-		sezioneHome.style.display = 'flex';
-		sezioneAmici.style.display = 'none';
-	});
-</script>
+                    link.classList.add('active');
+                });
+            });
+        </script>
+    </body> 
 </html>
